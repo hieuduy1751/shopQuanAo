@@ -27,8 +27,8 @@ public class Application extends javax.swing.JFrame implements ActionListener {
     
     public void removeAndUpdate() {
     	this.getContentPane().removeAll();
-    	this.invalidate();
-    	this.validate();
+    	this.revalidate();
+    	this.repaint();
     }
     
     /**
@@ -57,12 +57,16 @@ public class Application extends javax.swing.JFrame implements ActionListener {
         btnLogin.setText("Đăng nhập");
         btnLogin.setBorder(null);
         btnLogin.setOpaque(false);
+        btnLogin.setBorderPainted(false);
+        btnLogin.setContentAreaFilled(false);
 
         btnRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Tạo tài khoản");
         btnRegister.setBorder(null);
         btnRegister.setOpaque(false);
+        btnRegister.setBorderPainted(false);
+        btnRegister.setContentAreaFilled(false);
      
         getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, -1, -1));
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -87,21 +91,19 @@ public class Application extends javax.swing.JFrame implements ActionListener {
         Object obj = e.getSource();
         if(obj.equals(this.btnRegister))
         {
-            System.out.print("register button works");
             this.removeAndUpdate();
-//            this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, -1, -1));
-//            this.getContentPane().add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-//            
-//            this.getContentPane().validate();
+            this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, -1, -1));
+            this.getContentPane().add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+            this.revalidate();
+        	this.repaint();
         }
         else if(obj.equals(this.btnLogin))
         {
-            System.out.print("login button works");
-            this.getContentPane().remove(this.registerPanel);
             this.removeAndUpdate();
             this.getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, -1, -1));
             this.getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-            this.validate();
+            this.revalidate();
+        	this.repaint();
 	    }
 
 	}
