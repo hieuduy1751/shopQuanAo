@@ -1,10 +1,10 @@
 package main;
 
-import gui.Application;
+import gui.GUI_Application;
 import javax.swing.JFrame;
 
 public class main {
     public static void main(String[] args) {
-        new Application();
+        new GUI_Application();
     }   
 }

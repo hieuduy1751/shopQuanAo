@@ -4,16 +4,18 @@
  */
 package gui;
 
+import java.awt.event.*;
+import java.awt.Component;
 /**
  *
  * @author hieud
  */
-public class Login extends javax.swing.JPanel {
+public class GUI_Login extends javax.swing.JPanel implements ActionListener {
 
     /**
      * Creates new form login
      */
-    public Login() {
+    public GUI_Login() {
         initComponents();
     }
     
@@ -62,6 +64,7 @@ public class Login extends javax.swing.JPanel {
         btnDangNhap.setMaximumSize(new java.awt.Dimension(1000, 1005));
         btnDangNhap.setMinimumSize(new java.awt.Dimension(300, 45));
         btnDangNhap.setPreferredSize(new java.awt.Dimension(300, 45));
+        
         add(btnDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 300, 50));
 
         usernameForm.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\Username.png")); // NOI18N
@@ -78,6 +81,8 @@ public class Login extends javax.swing.JPanel {
         add(backgroundImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+                                               
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundImg;
@@ -88,4 +93,9 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JTextField txtUsername;
     private javax.swing.JLabel usernameForm;
     // End of variables declaration//GEN-END:variables
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Component source=(Component)e.getSource();
+		source.getParent().dispatchEvent(e);
+	  }
 }

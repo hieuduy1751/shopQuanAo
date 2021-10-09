@@ -8,12 +8,12 @@ package gui;
  *
  * @author hieud
  */
-public class Register extends javax.swing.JPanel {
+public class GUI_Register extends javax.swing.JPanel {
 
     /**
      * Creates new form Register
      */
-    public Register() {
+    public GUI_Register() {
         initComponents();
     }
 
@@ -126,7 +126,6 @@ public class Register extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundImg;
-    private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegister;
     private javax.swing.JLabel diaChi;
     private javax.swing.JLabel fullname;
