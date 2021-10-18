@@ -26,6 +26,8 @@ public class GUI_Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnKH = new javax.swing.JButton();
+        iconKH = new javax.swing.JLabel();
         btnAo = new javax.swing.JButton();
         btnDonHang = new javax.swing.JButton();
         btnNV = new javax.swing.JButton();
@@ -40,13 +42,28 @@ public class GUI_Menu extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnKH.setForeground(new java.awt.Color(255, 255, 255));
+        btnKH.setText("KHÁCH HÀNG");
+        btnKH.setBorder(null);
+        btnKH.setBorderPainted(false);
+        btnKH.setContentAreaFilled(false);
+        btnKH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKHActionPerformed(evt);
+            }
+        });
+        add(btnKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
+
+        iconKH.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconNv.png")); // NOI18N
+        add(iconKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 20, -1));
+
         btnAo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnAo.setForeground(new java.awt.Color(255, 255, 255));
         btnAo.setText("QUẦN ÁO");
         btnAo.setBorder(null);
         btnAo.setBorderPainted(false);
         btnAo.setContentAreaFilled(false);
-        btnAo.setOpaque(false);
         add(btnAo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 40));
 
         btnDonHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -55,7 +72,6 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnDonHang.setBorder(null);
         btnDonHang.setBorderPainted(false);
         btnDonHang.setContentAreaFilled(false);
-        btnDonHang.setOpaque(false);
         add(btnDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 40));
 
         btnNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -64,7 +80,6 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnNV.setBorder(null);
         btnNV.setBorderPainted(false);
         btnNV.setContentAreaFilled(false);
-        btnNV.setOpaque(false);
         add(btnNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, 30));
 
         iconAo.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconAo.png")); // NOI18N
@@ -91,13 +106,19 @@ public class GUI_Menu extends javax.swing.JPanel {
         add(mainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, -10, 1140, 750));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKHActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAo;
     private javax.swing.JButton btnDonHang;
+    private javax.swing.JButton btnKH;
     private javax.swing.JButton btnNV;
     private javax.swing.JLabel iconAo;
     private javax.swing.JLabel iconDonHang;
+    private javax.swing.JLabel iconKH;
     private javax.swing.JLabel iconNV;
     private javax.swing.JLabel logo;
     private javax.swing.JTabbedPane mainMenu;

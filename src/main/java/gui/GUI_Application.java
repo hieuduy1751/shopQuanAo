@@ -46,8 +46,6 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         gUI_Menu1 = new gui.GUI_Menu();
-        loginPanel = new GUI_Login();
-        registerPanel = new GUI_Register();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(39, 79, 199));
@@ -69,7 +67,11 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
         btnLogin.setContentAreaFilled(false);
-        
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, -1));
 
         btnRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -78,12 +80,14 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnRegister.setBorder(null);
         btnRegister.setBorderPainted(false);
         btnRegister.setContentAreaFilled(false);
-        
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 680, -1, -1));
         getContentPane().add(gUI_Menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        btnGuestMode.addActionListener(this);
-        btnLogin.addActionListener(this);
-        btnRegister.addActionListener(this);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
