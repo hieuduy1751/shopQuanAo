@@ -28,17 +28,13 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
 
         txtTimKiem = new javax.swing.JTextField();
         searchBox = new javax.swing.JLabel();
+        btnLuoi = new javax.swing.JButton();
+        btnDsQA = new javax.swing.JButton();
         btnTimKiem = new javax.swing.JButton();
-        quanAoUI1 = new gui.QuanAoUI();
-        quanAoUI2 = new gui.QuanAoUI();
-        quanAoUI3 = new gui.QuanAoUI();
-        quanAoUI4 = new gui.QuanAoUI();
-        quanAoUI5 = new gui.QuanAoUI();
-        quanAoUI6 = new gui.QuanAoUI();
-        quanAoUI7 = new gui.QuanAoUI();
-        quanAoUI8 = new gui.QuanAoUI();
-        quanAoUI9 = new gui.QuanAoUI();
-        quanAoUI10 = new gui.QuanAoUI();
+        scrollGrid = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        scrollList = new javax.swing.JScrollPane();
+        tableQuanAo = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1100, 720));
@@ -53,56 +49,97 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
         searchBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\search.png")); // NOI18N
         add(searchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
+        btnLuoi.setBackground(new java.awt.Color(255, 255, 255));
+        btnLuoi.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\list.png")); // NOI18N
+        btnLuoi.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnLuoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuoiActionPerformed(evt);
+            }
+        });
+        add(btnLuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 50, 45));
+
+        btnDsQA.setBackground(new java.awt.Color(255, 255, 255));
+        btnDsQA.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\grid.png")); // NOI18N
+        btnDsQA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        add(btnDsQA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 50, 45));
+
         btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
         btnTimKiem.setText("Tìm kiếm");
         btnTimKiem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 86, 45));
 
-        quanAoUI1.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 159, 235));
+        scrollGrid.setBackground(new java.awt.Color(255, 255, 255));
+        scrollGrid.setBorder(null);
 
-        quanAoUI2.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 159, 235));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(835, 1000));
+        jPanel1.setLayout(new java.awt.GridLayout(4, 5, 40, 20));
+        scrollGrid.setViewportView(jPanel1);
 
-        quanAoUI3.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 159, 235));
+        add(scrollGrid, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 960, 570));
 
-        quanAoUI4.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 159, 235));
+        tableQuanAo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "STT", "Tên sản phẩm", "Thương hiệu", "Đơn giá", "Tồn"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-        quanAoUI5.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 159, 235));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        quanAoUI6.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 159, 235));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableQuanAo.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tableQuanAo.setCellSelectionEnabled(true);
+        tableQuanAo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tableQuanAo.setRowHeight(30);
+        tableQuanAo.setShowGrid(true);
+        scrollList.setViewportView(tableQuanAo);
 
-        quanAoUI7.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 159, 235));
-
-        quanAoUI8.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 159, 235));
-
-        quanAoUI9.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 140, 159, 235));
-
-        quanAoUI10.setPreferredSize(new java.awt.Dimension(151, 200));
-        add(quanAoUI10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, 159, 235));
+        add(scrollList, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 960, 570));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuoiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLuoiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDsQA;
+    private javax.swing.JButton btnLuoi;
     private javax.swing.JButton btnTimKiem;
-    private gui.QuanAoUI quanAoUI1;
-    private gui.QuanAoUI quanAoUI10;
-    private gui.QuanAoUI quanAoUI2;
-    private gui.QuanAoUI quanAoUI3;
-    private gui.QuanAoUI quanAoUI4;
-    private gui.QuanAoUI quanAoUI5;
-    private gui.QuanAoUI quanAoUI6;
-    private gui.QuanAoUI quanAoUI7;
-    private gui.QuanAoUI quanAoUI8;
-    private gui.QuanAoUI quanAoUI9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane scrollGrid;
+    private javax.swing.JScrollPane scrollList;
     private javax.swing.JLabel searchBox;
+    private javax.swing.JTable tableQuanAo;
     private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
 }
