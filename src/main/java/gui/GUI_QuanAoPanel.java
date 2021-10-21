@@ -28,33 +28,34 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
 
         txtTimKiem = new javax.swing.JTextField();
         searchBox = new javax.swing.JLabel();
-        btnTimKiem = new javax.swing.JButton();
         scrollGrid = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        quanAoUI1 = new gui.QuanAoUI();
-        quanAoUI2 = new gui.QuanAoUI();
-        quanAoUI3 = new gui.QuanAoUI();
-        quanAoUI4 = new gui.QuanAoUI();
-        quanAoUI5 = new gui.QuanAoUI();
-        quanAoUI6 = new gui.QuanAoUI();
-        quanAoUI7 = new gui.QuanAoUI();
-        quanAoUI8 = new gui.QuanAoUI();
-        quanAoUI9 = new gui.QuanAoUI();
-        quanAoUI10 = new gui.QuanAoUI();
-        quanAoUI11 = new gui.QuanAoUI();
-        quanAoUI12 = new gui.QuanAoUI();
-        quanAoUI13 = new gui.QuanAoUI();
-        quanAoUI14 = new gui.QuanAoUI();
-        quanAoUI15 = new gui.QuanAoUI();
-        quanAoUI16 = new gui.QuanAoUI();
-        quanAoUI17 = new gui.QuanAoUI();
-        quanAoUI18 = new gui.QuanAoUI();
-        quanAoUI19 = new gui.QuanAoUI();
-        quanAoUI20 = new gui.QuanAoUI();
+        quanAoUI1 = new gui.GUI_QuanAoComponent();
+        quanAoUI2 = new gui.GUI_QuanAoComponent();
+        quanAoUI3 = new gui.GUI_QuanAoComponent();
+        quanAoUI4 = new gui.GUI_QuanAoComponent();
+        quanAoUI5 = new gui.GUI_QuanAoComponent();
+        quanAoUI6 = new gui.GUI_QuanAoComponent();
+        quanAoUI7 = new gui.GUI_QuanAoComponent();
+        quanAoUI8 = new gui.GUI_QuanAoComponent();
+        quanAoUI9 = new gui.GUI_QuanAoComponent();
+        quanAoUI10 = new gui.GUI_QuanAoComponent();
+        quanAoUI11 = new gui.GUI_QuanAoComponent();
+        quanAoUI12 = new gui.GUI_QuanAoComponent();
+        quanAoUI13 = new gui.GUI_QuanAoComponent();
+        quanAoUI14 = new gui.GUI_QuanAoComponent();
+        quanAoUI15 = new gui.GUI_QuanAoComponent();
+        quanAoUI16 = new gui.GUI_QuanAoComponent();
+        quanAoUI17 = new gui.GUI_QuanAoComponent();
+        quanAoUI18 = new gui.GUI_QuanAoComponent();
+        quanAoUI19 = new gui.GUI_QuanAoComponent();
+        quanAoUI20 = new gui.GUI_QuanAoComponent();
         scrollList = new javax.swing.JScrollPane();
         tableQuanAo = new javax.swing.JTable();
         btnDsQA = new javax.swing.JButton();
         btnLuoi = new javax.swing.JButton();
+        btnTimKiem1 = new javax.swing.JButton();
+        btnThemSP1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1100, 720));
@@ -66,13 +67,8 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
         txtTimKiem.setOpaque(false);
         add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 260, 50));
 
-        searchBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\search.png")); // NOI18N
+        searchBox.setIcon(new javax.swing.ImageIcon("resources\\search.png")); // NOI18N
         add(searchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
-
-        btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
-        btnTimKiem.setText("Tìm kiếm");
-        btnTimKiem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 86, 45));
 
         scrollGrid.setBackground(new java.awt.Color(255, 255, 255));
         scrollGrid.setBorder(null);
@@ -205,6 +201,16 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
             }
         });
         add(btnLuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 50, 45));
+
+        btnTimKiem1.setBackground(new java.awt.Color(255, 255, 255));
+        btnTimKiem1.setText("Tìm kiếm");
+        btnTimKiem1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        add(btnTimKiem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 86, 45));
+
+        btnThemSP1.setBackground(new java.awt.Color(255, 255, 255));
+        btnThemSP1.setText("Thêm sản phẩm");
+        btnThemSP1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        add(btnThemSP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(896, 60, 120, 45));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuoiActionPerformed
@@ -215,28 +221,29 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDsQA;
     private javax.swing.JButton btnLuoi;
-    private javax.swing.JButton btnTimKiem;
+    private javax.swing.JButton btnThemSP1;
+    private javax.swing.JButton btnTimKiem1;
     private javax.swing.JPanel jPanel1;
-    private gui.QuanAoUI quanAoUI1;
-    private gui.QuanAoUI quanAoUI10;
-    private gui.QuanAoUI quanAoUI11;
-    private gui.QuanAoUI quanAoUI12;
-    private gui.QuanAoUI quanAoUI13;
-    private gui.QuanAoUI quanAoUI14;
-    private gui.QuanAoUI quanAoUI15;
-    private gui.QuanAoUI quanAoUI16;
-    private gui.QuanAoUI quanAoUI17;
-    private gui.QuanAoUI quanAoUI18;
-    private gui.QuanAoUI quanAoUI19;
-    private gui.QuanAoUI quanAoUI2;
-    private gui.QuanAoUI quanAoUI20;
-    private gui.QuanAoUI quanAoUI3;
-    private gui.QuanAoUI quanAoUI4;
-    private gui.QuanAoUI quanAoUI5;
-    private gui.QuanAoUI quanAoUI6;
-    private gui.QuanAoUI quanAoUI7;
-    private gui.QuanAoUI quanAoUI8;
-    private gui.QuanAoUI quanAoUI9;
+    private gui.GUI_QuanAoComponent quanAoUI1;
+    private gui.GUI_QuanAoComponent quanAoUI10;
+    private gui.GUI_QuanAoComponent quanAoUI11;
+    private gui.GUI_QuanAoComponent quanAoUI12;
+    private gui.GUI_QuanAoComponent quanAoUI13;
+    private gui.GUI_QuanAoComponent quanAoUI14;
+    private gui.GUI_QuanAoComponent quanAoUI15;
+    private gui.GUI_QuanAoComponent quanAoUI16;
+    private gui.GUI_QuanAoComponent quanAoUI17;
+    private gui.GUI_QuanAoComponent quanAoUI18;
+    private gui.GUI_QuanAoComponent quanAoUI19;
+    private gui.GUI_QuanAoComponent quanAoUI2;
+    private gui.GUI_QuanAoComponent quanAoUI20;
+    private gui.GUI_QuanAoComponent quanAoUI3;
+    private gui.GUI_QuanAoComponent quanAoUI4;
+    private gui.GUI_QuanAoComponent quanAoUI5;
+    private gui.GUI_QuanAoComponent quanAoUI6;
+    private gui.GUI_QuanAoComponent quanAoUI7;
+    private gui.GUI_QuanAoComponent quanAoUI8;
+    private gui.GUI_QuanAoComponent quanAoUI9;
     private javax.swing.JScrollPane scrollGrid;
     private javax.swing.JScrollPane scrollList;
     private javax.swing.JLabel searchBox;

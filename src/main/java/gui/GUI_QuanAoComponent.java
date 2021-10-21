@@ -8,12 +8,12 @@ package gui;
  *
  * @author hieud
  */
-public class QuanAoUI extends javax.swing.JPanel {
+public class GUI_QuanAoComponent extends javax.swing.JPanel {
 
     /**
      * Creates new form QuanAoUI
      */
-    public QuanAoUI() {
+    public GUI_QuanAoComponent() {
         initComponents();
     }
 

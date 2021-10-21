@@ -4,13 +4,19 @@
  */
 package gui;
 
+import java.awt.event.*;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 /**
  *
  * @author hieud
  */
-public class GUI_Menu extends javax.swing.JPanel {
+public class GUI_Menu extends javax.swing.JPanel implements ActionListener{
 
-    /**
+    private JLabel iconGioHang;
+	private JButton btnGioHang;
+	/**
      * Creates new form menu
      */
     public GUI_Menu() {
@@ -31,13 +37,20 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnAo = new javax.swing.JButton();
         btnDonHang = new javax.swing.JButton();
         btnNV = new javax.swing.JButton();
+        btnGioHang = new javax.swing.JButton();
         iconAo = new javax.swing.JLabel();
         iconNV = new javax.swing.JLabel();
         iconDonHang = new javax.swing.JLabel();
+        iconGioHang = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         rightTab = new javax.swing.JLabel();
-        mainMenu = new javax.swing.JTabbedPane();
+        tabbedPane = new javax.swing.JTabbedPane();
         quanAoPanel1 = new gui.GUI_QuanAoPanel();
+        gUI_QLHD1 = new gui.GUI_QLHD();
+        gUI_QLNV1 = new gui.GUI_QLNV();
+        gUI_QLKH1 = new gui.GUI_QLKH();
+        gUI_ChiTietDonHang1 = new gui.GUI_ChiTietDonHang();
+        gUI_GioHang1 = new gui.GUI_GioHang();
 
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,15 +61,13 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnKH.setBorder(null);
         btnKH.setBorderPainted(false);
         btnKH.setContentAreaFilled(false);
-        btnKH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKHActionPerformed(evt);
-            }
-        });
-        add(btnKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
+        add(btnKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, -1, 30));
 
-        iconKH.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconNv.png")); // NOI18N
-        add(iconKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 20, -1));
+        iconKH.setIcon(new javax.swing.ImageIcon("resources\\iconNv.png")); // NOI18N
+        add(iconKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 20, -1));
+        
+        iconGioHang.setIcon(new javax.swing.ImageIcon("resources\\iconCart.png"));
+        add(iconGioHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 20, -1));
 
         btnAo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnAo.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,7 +83,15 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnDonHang.setBorder(null);
         btnDonHang.setBorderPainted(false);
         btnDonHang.setContentAreaFilled(false);
-        add(btnDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 40));
+        add(btnDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, 40));
+        
+        btnGioHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGioHang.setForeground(new java.awt.Color(255, 255, 255));
+        btnGioHang.setText("GIỎ HÀNG");
+        btnGioHang.setBorder(null);
+        btnGioHang.setBorderPainted(false);
+        btnGioHang.setContentAreaFilled(false);
+        add(btnGioHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 40));
 
         btnNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnNV.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,35 +99,40 @@ public class GUI_Menu extends javax.swing.JPanel {
         btnNV.setBorder(null);
         btnNV.setBorderPainted(false);
         btnNV.setContentAreaFilled(false);
-        add(btnNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, 30));
+        add(btnNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
 
-        iconAo.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconAo.png")); // NOI18N
+        iconAo.setIcon(new javax.swing.ImageIcon("resources\\iconAo.png")); // NOI18N
         add(iconAo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 20, -1));
 
-        iconNV.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconNv.png")); // NOI18N
-        add(iconNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 20, -1));
+        iconNV.setIcon(new javax.swing.ImageIcon("resources\\iconNv.png")); // NOI18N
+        add(iconNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 20, -1));
 
-        iconDonHang.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\iconDonHang.png")); // NOI18N
-        add(iconDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+        iconDonHang.setIcon(new javax.swing.ImageIcon("resources\\iconDonHang.png")); // NOI18N
+        add(iconDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
-        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\shopQuanAo.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("resources\\shopQuanAo.png")); // NOI18N
         add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
-        rightTab.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\BG.png")); // NOI18N
+        rightTab.setIcon(new javax.swing.ImageIcon("resources\\BG.png")); // NOI18N
         rightTab.setFocusable(false);
         rightTab.setPreferredSize(new java.awt.Dimension(250, 720));
         add(rightTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        mainMenu.setBackground(new java.awt.Color(255, 255, 255));
-        mainMenu.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        mainMenu.addTab("tabQuanAo", quanAoPanel1);
-
-        add(mainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, -10, 1140, 750));
+        tabbedPane.setBackground(new java.awt.Color(255, 255, 255));
+        tabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        tabbedPane.addTab("tabQuanAo", quanAoPanel1);
+        tabbedPane.addTab("tabQLHD", gUI_QLHD1);
+        tabbedPane.addTab("tabQLNV", gUI_QLNV1);
+        tabbedPane.addTab("tabQLKH", gUI_QLKH1);
+        tabbedPane.addTab("tabCTDH", gUI_ChiTietDonHang1);
+        tabbedPane.addTab("tabGioHang", gUI_GioHang1);
+        this.btnAo.addActionListener(this);
+        this.btnDonHang.addActionListener(this);
+        this.btnKH.addActionListener(this);
+        this.btnNV.addActionListener(this);
+        this.btnGioHang.addActionListener(this);
+        add(tabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, -10, 1140, 750));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -116,13 +140,39 @@ public class GUI_Menu extends javax.swing.JPanel {
     private javax.swing.JButton btnDonHang;
     private javax.swing.JButton btnKH;
     private javax.swing.JButton btnNV;
+    private gui.GUI_ChiTietDonHang gUI_ChiTietDonHang1;
+    private gui.GUI_GioHang gUI_GioHang1;
+    private gui.GUI_QLHD gUI_QLHD1;
+    private gui.GUI_QLKH gUI_QLKH1;
+    private gui.GUI_QLNV gUI_QLNV1;
     private javax.swing.JLabel iconAo;
     private javax.swing.JLabel iconDonHang;
     private javax.swing.JLabel iconKH;
     private javax.swing.JLabel iconNV;
     private javax.swing.JLabel logo;
-    private javax.swing.JTabbedPane mainMenu;
     private gui.GUI_QuanAoPanel quanAoPanel1;
     private javax.swing.JLabel rightTab;
+    private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    	Object source = e.getSource();
+    	if(source.equals(btnAo)) {
+    		this.tabbedPane.setSelectedIndex(0);
+    	}
+    	else if(source.equals(btnDonHang)) {
+    		this.tabbedPane.setSelectedIndex(1);
+    	}
+    	else if(source.equals(btnKH)) {
+    		this.tabbedPane.setSelectedIndex(3);
+    	}
+    	else if(source.equals(btnNV)) {
+    		this.tabbedPane.setSelectedIndex(2);
+    	}
+    	else if(source.equals(btnGioHang)) {
+    		this.tabbedPane.setSelectedIndex(5);
+    	}
+    	
+    }
 }
