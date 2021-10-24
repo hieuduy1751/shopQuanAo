@@ -15,9 +15,9 @@ import java.awt.event.*;
  *
  * @author hieud
  */
-public class GUI_Application extends javax.swing.JFrame implements ActionListener {
-    private JPanel registerPanel;
-    private JPanel loginPanel;
+public class GUI_Application extends javax.swing.JFrame {
+    private JPanel registerPanel = new GUI_Login();
+    private JPanel loginPanel = new GUI_Register();
     //    private JPanel loginForm = new Login();
     /**
      * Creates new form application
@@ -25,6 +25,7 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
     public GUI_Application() {
         initComponents();
         this.setVisible(true);
+        this.remove(btnGuestMode);
     }
     
     public void removeAndUpdate() {
@@ -46,8 +47,6 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         gUI_Menu1 = new gui.GUI_Menu();
-        loginPanel = new GUI_Login();
-        registerPanel = new GUI_Register();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(39, 79, 199));
@@ -58,9 +57,15 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
 
         btnGuestMode.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnGuestMode.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuestMode.setText("Quay lại");
+        btnGuestMode.setText("Chế độ Khách");
         btnGuestMode.setBorderPainted(false);
         btnGuestMode.setContentAreaFilled(false);
+        btnGuestMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuestModeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnGuestMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 570, 130, -1));
 
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,6 +73,11 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
         btnLogin.setContentAreaFilled(false);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, -1));
 
         btnRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -76,14 +86,46 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
         btnRegister.setBorder(null);
         btnRegister.setBorderPainted(false);
         btnRegister.setContentAreaFilled(false);
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 680, -1, -1));
         getContentPane().add(gUI_Menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        this.btnLogin.addActionListener(this);
-        this.btnRegister.addActionListener(this);
-        this.btnGuestMode.addActionListener(this);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuestModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuestModeActionPerformed
+        // TODO add your handling code here:
+        this.removeAndUpdate();
+        this.getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 680, -1, -1));
+        this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, -1));
+        this.getContentPane().add(gUI_Menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_btnGuestModeActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        // TODO add your handling code here:
+        this.removeAndUpdate();
+        this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, -1, -1));
+        this.getContentPane().add(btnGuestMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 670, 130, -1));
+        this.getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        this.removeAndUpdate();
+        this.getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, -1, -1));
+        this.getContentPane().add(btnGuestMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 570, 130, -1));  
+        this.getContentPane().add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     
     /**
@@ -97,36 +139,5 @@ public class GUI_Application extends javax.swing.JFrame implements ActionListene
     private javax.swing.JButton btnRegister;
     private gui.GUI_Menu gUI_Menu1;
     // End of variables declaration//GEN-END:variables
-	@Override
-	public void actionPerformed(ActionEvent e) {
-        Object obj = e.getSource();
-        if(obj.equals(this.btnRegister))
-        {
-            this.removeAndUpdate();
-            this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, -1, -1));
-            this.getContentPane().add(btnGuestMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 670, 130, -1));
-            this.getContentPane().add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-            this.revalidate();
-        	this.repaint();
-        }
-        else if(obj.equals(this.btnLogin))
-        {
-            this.removeAndUpdate();
-            this.getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, -1, -1));
-            this.getContentPane().add(btnGuestMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 570, 130, -1));
-            this.getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-            this.revalidate();
-        	this.repaint();
-	    }
-        else if(obj.equals(this.btnGuestMode))
-        {
-        	this.removeAndUpdate();
-        	this.getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 680, -1, -1));
-        	this.getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, -1));
-            this.getContentPane().add(gUI_Menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-            this.revalidate();
-            this.repaint();
-        }
-        
-    }
+
 }

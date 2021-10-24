@@ -4,6 +4,7 @@
  */
 package gui;
 
+import java.awt.Dimension;
 import java.awt.event.*;
 
 import javax.swing.JButton;
@@ -12,10 +13,8 @@ import javax.swing.JLabel;
  *
  * @author hieud
  */
-public class GUI_Menu extends javax.swing.JPanel implements ActionListener{
-
-    private JLabel iconGioHang;
-	private JButton btnGioHang;
+public class GUI_Menu extends javax.swing.JPanel {
+    private int verticalSize = 40;
 	/**
      * Creates new form menu
      */
@@ -32,19 +31,11 @@ public class GUI_Menu extends javax.swing.JPanel implements ActionListener{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnKH = new javax.swing.JButton();
-        iconKH = new javax.swing.JLabel();
-        btnAo = new javax.swing.JButton();
-        btnDonHang = new javax.swing.JButton();
-        btnNV = new javax.swing.JButton();
-        btnGioHang = new javax.swing.JButton();
-        iconAo = new javax.swing.JLabel();
-        iconNV = new javax.swing.JLabel();
-        iconDonHang = new javax.swing.JLabel();
-        iconGioHang = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
+        scrollMenu = new javax.swing.JScrollPane();
+        panelMenu = new javax.swing.JPanel();
         rightTab = new javax.swing.JLabel();
-        tabbedPane = new javax.swing.JTabbedPane();
+        tabQLHD = new javax.swing.JTabbedPane();
         quanAoPanel1 = new gui.GUI_QuanAoPanel();
         gUI_QLHD1 = new gui.GUI_QLHD();
         gUI_QLNV1 = new gui.GUI_QLNV();
@@ -55,124 +46,264 @@ public class GUI_Menu extends javax.swing.JPanel implements ActionListener{
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnKH.setForeground(new java.awt.Color(255, 255, 255));
-        btnKH.setText("KHÁCH HÀNG");
-        btnKH.setBorder(null);
-        btnKH.setBorderPainted(false);
-        btnKH.setContentAreaFilled(false);
-        add(btnKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, -1, 30));
-
-        iconKH.setIcon(new javax.swing.ImageIcon("resources\\iconNv.png")); // NOI18N
-        add(iconKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 20, -1));
-        
-        iconGioHang.setIcon(new javax.swing.ImageIcon("resources\\iconCart.png"));
-        add(iconGioHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 20, -1));
-
-        btnAo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnAo.setForeground(new java.awt.Color(255, 255, 255));
-        btnAo.setText("QUẦN ÁO");
-        btnAo.setBorder(null);
-        btnAo.setBorderPainted(false);
-        btnAo.setContentAreaFilled(false);
-        add(btnAo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 40));
-
-        btnDonHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnDonHang.setForeground(new java.awt.Color(255, 255, 255));
-        btnDonHang.setText("ĐƠN HÀNG");
-        btnDonHang.setBorder(null);
-        btnDonHang.setBorderPainted(false);
-        btnDonHang.setContentAreaFilled(false);
-        add(btnDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, 40));
-        
-        btnGioHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnGioHang.setForeground(new java.awt.Color(255, 255, 255));
-        btnGioHang.setText("GIỎ HÀNG");
-        btnGioHang.setBorder(null);
-        btnGioHang.setBorderPainted(false);
-        btnGioHang.setContentAreaFilled(false);
-        add(btnGioHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 40));
-
-        btnNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnNV.setForeground(new java.awt.Color(255, 255, 255));
-        btnNV.setText("NHÂN VIÊN");
-        btnNV.setBorder(null);
-        btnNV.setBorderPainted(false);
-        btnNV.setContentAreaFilled(false);
-        add(btnNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
-
-        iconAo.setIcon(new javax.swing.ImageIcon("resources\\iconAo.png")); // NOI18N
-        add(iconAo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 20, -1));
-
-        iconNV.setIcon(new javax.swing.ImageIcon("resources\\iconNv.png")); // NOI18N
-        add(iconNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 20, -1));
-
-        iconDonHang.setIcon(new javax.swing.ImageIcon("resources\\iconDonHang.png")); // NOI18N
-        add(iconDonHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
-
-        logo.setIcon(new javax.swing.ImageIcon("resources\\shopQuanAo.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\shopQuanAo.png")); // NOI18N
         add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
-        rightTab.setIcon(new javax.swing.ImageIcon("resources\\BG.png")); // NOI18N
+        scrollMenu.setBackground(new java.awt.Color(36, 75, 197));
+        scrollMenu.setBorder(null);
+        scrollMenu.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollMenu.setPreferredSize(new java.awt.Dimension(250, 350));
+
+        panelMenu.setBackground(new java.awt.Color(36, 75, 197));
+        panelMenu.setPreferredSize(new java.awt.Dimension(250, this.verticalSize));
+        scrollMenu.setViewportView(panelMenu);
+        this.addMenu(this.menuQuanAo);
+        this.addMenu(this.menuGioHang);
+        this.addMenu(this.menuHoaDon);
+        this.addMenu(this.menuNhanVien);
+        this.addMenu(this.menuKhachHang);
+        this.addMenu(this.menuThongKe);
+        this.addMenu(this.menuLichLamViec);
+
+        this.menuQuanAo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuQuanAo.getStatus()) {
+                    menuQuanAo.setStatus();
+                    removeSubMenu(menuQuanAo, xemQuanAo);
+                    removeSubMenu(menuQuanAo, quanLyQuanAo);
+                    removeSubMenu(menuQuanAo, loaiSanPham);
+                    removeSubMenu(menuQuanAo, hangSanXuat);
+                    removeSubMenu(menuQuanAo, xuatXu);
+                    menuQuanAo.revalidate();
+                    menuQuanAo.repaint();
+                }
+                else {
+                    menuQuanAo.setStatus();
+                    addSubMenu(menuQuanAo, xemQuanAo);
+                    addSubMenu(menuQuanAo, quanLyQuanAo);
+                    addSubMenu(menuQuanAo, loaiSanPham);
+                    addSubMenu(menuQuanAo, hangSanXuat);
+                    addSubMenu(menuQuanAo, xuatXu);
+                    menuQuanAo.revalidate();
+                    menuQuanAo.repaint();
+                }
+            }
+        });
+
+        this.menuHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuHoaDon.getStatus()) {
+                    menuHoaDon.setStatus();
+                    removeSubMenu(menuHoaDon, timKiemDonHang);
+                    removeSubMenu(menuHoaDon, quanLyDonHang);
+                    menuHoaDon.revalidate();
+                    menuHoaDon.repaint();
+                }
+                else {
+                    menuHoaDon.setStatus();
+                    addSubMenu(menuHoaDon, timKiemDonHang);
+                    addSubMenu(menuHoaDon, quanLyDonHang);
+                    menuHoaDon.revalidate();
+                    menuHoaDon.repaint();
+                }
+            }
+        });
+
+        this.menuNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuNhanVien.getStatus()) {
+                    menuNhanVien.setStatus();
+                    removeSubMenu(menuNhanVien, timKiemNhanVien);
+                    removeSubMenu(menuNhanVien, quanLyNhanVien);
+                    menuNhanVien.revalidate();
+                    menuNhanVien.repaint();
+                }
+                else {
+                    menuNhanVien.setStatus();
+                    addSubMenu(menuNhanVien, timKiemNhanVien);
+                    addSubMenu(menuNhanVien, quanLyNhanVien);
+                    menuNhanVien.revalidate();
+                    menuNhanVien.repaint();
+                }
+            }
+        });
+
+        this.menuKhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuKhachHang.getStatus()) {
+                    menuKhachHang.setStatus();
+                    removeSubMenu(menuKhachHang, timKiemKhachHang);
+                    removeSubMenu(menuKhachHang, quanLyKhachHang);
+                    menuKhachHang.revalidate();
+                    menuKhachHang.repaint();
+                }
+                else {
+                    menuKhachHang.setStatus();
+                    addSubMenu(menuKhachHang, timKiemKhachHang);
+                    addSubMenu(menuKhachHang, quanLyKhachHang);
+                    menuKhachHang.revalidate();
+                    menuKhachHang.repaint();
+                }
+            }
+        });
+
+        this.menuThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuThongKe.getStatus()) {
+                    menuThongKe.setStatus();
+                    removeSubMenu(menuThongKe, thongKeDoanhThu);
+                    removeSubMenu(menuThongKe, thongKeNguoiDung);
+                    removeSubMenu(menuThongKe, thongKeSanPhan);
+                    menuThongKe.revalidate();
+                    menuThongKe.repaint();
+                }
+                else {
+                    menuThongKe.setStatus();
+                    addSubMenu(menuThongKe, thongKeDoanhThu);
+                    addSubMenu(menuThongKe, thongKeNguoiDung);
+                    addSubMenu(menuThongKe, thongKeSanPhan);
+                    menuThongKe.revalidate();
+                    menuThongKe.repaint();
+                }
+            }
+        });
+
+        this.menuLichLamViec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if(menuLichLamViec.getStatus()) {
+                    menuLichLamViec.setStatus();
+                    removeSubMenu(menuLichLamViec, timKiemLich);
+                    removeSubMenu(menuLichLamViec, quanLyLich);
+                    menuLichLamViec.revalidate();
+                    menuLichLamViec.repaint();
+                }
+                else {
+                    menuLichLamViec.setStatus();
+                    addSubMenu(menuLichLamViec, timKiemLich);
+                    addSubMenu(menuLichLamViec, quanLyLich);
+                    menuLichLamViec.revalidate();
+                    menuLichLamViec.repaint();
+                }
+            }
+        });
+
+        this.xemQuanAo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(0);
+            }
+        });
+
+        this.quanLyQuanAo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(0);
+            }
+        });
+
+        this.quanLyNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(2);
+            }
+        });
+
+        this.quanLyKhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(3);
+            }
+
+        });
+
+        this.menuGioHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(5);
+            }
+        });
+
+        this.quanLyDonHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabQLHD.setSelectedIndex(1);
+            }
+        });
+
+        add(scrollMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 370));
+
+        rightTab.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\BG.png")); // NOI18N
         rightTab.setFocusable(false);
         rightTab.setPreferredSize(new java.awt.Dimension(250, 720));
         add(rightTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        tabbedPane.setBackground(new java.awt.Color(255, 255, 255));
-        tabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        tabbedPane.addTab("tabQuanAo", quanAoPanel1);
-        tabbedPane.addTab("tabQLHD", gUI_QLHD1);
-        tabbedPane.addTab("tabQLNV", gUI_QLNV1);
-        tabbedPane.addTab("tabQLKH", gUI_QLKH1);
-        tabbedPane.addTab("tabCTDH", gUI_ChiTietDonHang1);
-        tabbedPane.addTab("tabGioHang", gUI_GioHang1);
-        this.btnAo.addActionListener(this);
-        this.btnDonHang.addActionListener(this);
-        this.btnKH.addActionListener(this);
-        this.btnNV.addActionListener(this);
-        this.btnGioHang.addActionListener(this);
-        add(tabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, -10, 1140, 750));
+        tabQLHD.setBackground(new java.awt.Color(255, 255, 255));
+        tabQLHD.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        tabQLHD.addTab("tabQuanAo", quanAoPanel1);
+        tabQLHD.addTab("tabQLHD", gUI_QLHD1);
+        tabQLHD.addTab("tabQLNV", gUI_QLNV1);
+        tabQLHD.addTab("tabQLKH", gUI_QLKH1);
+        tabQLHD.addTab("tabCTDH", gUI_ChiTietDonHang1);
+        tabQLHD.addTab("tabGioHang", gUI_GioHang1);
+
+        add(tabQLHD, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, -10, 1140, 750));
     }// </editor-fold>//GEN-END:initComponents
 
-
+    public void addMenu(GUI_MenuComponent panel) {
+        this.verticalSize += 40;
+        this.scrollMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        this.panelMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        this.panelMenu.add(panel);
+        this.panelMenu.revalidate();
+        this.panelMenu.repaint();
+    }
+    
+    public void addSubMenu(GUI_MenuComponent panel, GUI_SubMenu sub) {
+        this.verticalSize += 40;
+        this.scrollMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        this.panelMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        panel.addSubMenu(sub);
+        this.panelMenu.revalidate();
+        this.panelMenu.repaint();
+    }
+    
+    public void removeSubMenu(GUI_MenuComponent panel, GUI_SubMenu sub) {
+        this.verticalSize -= 40;
+        this.scrollMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        this.panelMenu.setPreferredSize(new Dimension(250, this.verticalSize));
+        panel.removeSubMenu(sub);
+        this.panelMenu.revalidate();
+        this.panelMenu.repaint();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAo;
-    private javax.swing.JButton btnDonHang;
-    private javax.swing.JButton btnKH;
-    private javax.swing.JButton btnNV;
     private gui.GUI_ChiTietDonHang gUI_ChiTietDonHang1;
     private gui.GUI_GioHang gUI_GioHang1;
     private gui.GUI_QLHD gUI_QLHD1;
     private gui.GUI_QLKH gUI_QLKH1;
     private gui.GUI_QLNV gUI_QLNV1;
-    private javax.swing.JLabel iconAo;
-    private javax.swing.JLabel iconDonHang;
-    private javax.swing.JLabel iconKH;
-    private javax.swing.JLabel iconNV;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel panelMenu;
     private gui.GUI_QuanAoPanel quanAoPanel1;
     private javax.swing.JLabel rightTab;
-    private javax.swing.JTabbedPane tabbedPane;
+    private javax.swing.JScrollPane scrollMenu;
+    private javax.swing.JTabbedPane tabQLHD;
     // End of variables declaration//GEN-END:variables
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-    	Object source = e.getSource();
-    	if(source.equals(btnAo)) {
-    		this.tabbedPane.setSelectedIndex(0);
-    	}
-    	else if(source.equals(btnDonHang)) {
-    		this.tabbedPane.setSelectedIndex(1);
-    	}
-    	else if(source.equals(btnKH)) {
-    		this.tabbedPane.setSelectedIndex(3);
-    	}
-    	else if(source.equals(btnNV)) {
-    		this.tabbedPane.setSelectedIndex(2);
-    	}
-    	else if(source.equals(btnGioHang)) {
-    		this.tabbedPane.setSelectedIndex(5);
-    	}
-    	
-    }
+    private GUI_MenuComponent menuQuanAo = new GUI_MenuComponent("QUẦN ÁO", "resources\\iconAo.png");
+    private GUI_MenuComponent menuGioHang = new GUI_MenuComponent("GIỎ HÀNG", "resources\\iconCart.png");
+    private GUI_MenuComponent menuHoaDon = new GUI_MenuComponent("ĐƠN HÀNG", "resources\\iconDonHang.png");
+    private GUI_MenuComponent menuNhanVien = new GUI_MenuComponent("NHÂN VIÊN", "resources\\iconNv.png");
+    private GUI_MenuComponent menuKhachHang = new GUI_MenuComponent("KHÁCH HÀNG", "resources\\iconNv.png");
+    private GUI_MenuComponent menuThongKe = new GUI_MenuComponent("THỐNG KÊ", "resources\\iconDonHang.png");
+    private GUI_MenuComponent menuLichLamViec = new GUI_MenuComponent("LỊCH LÀM VIỆC", "resources\\iconDonHang.png");
+    private GUI_SubMenu xemQuanAo = new GUI_SubMenu("Xem quần áo", "");
+    private GUI_SubMenu quanLyQuanAo = new GUI_SubMenu("Quản lý quần áo", "");
+    private GUI_SubMenu loaiSanPham = new GUI_SubMenu("Loại sản phẩm", "");
+    private GUI_SubMenu hangSanXuat = new GUI_SubMenu("Hãng sản xuất", "");
+    private GUI_SubMenu xuatXu = new GUI_SubMenu("Xuất xứ", "");
+    private GUI_SubMenu quanLyNhanVien = new GUI_SubMenu("Quản lý nhân viên", "");
+    private GUI_SubMenu timKiemNhanVien = new GUI_SubMenu("Tìm kiếm nhân viên", "");
+    private GUI_SubMenu quanLyKhachHang = new GUI_SubMenu("Quản lý khách hàng", "");
+    private GUI_SubMenu timKiemKhachHang = new GUI_SubMenu("Tìm kiếm khách hàng", "");
+    private GUI_SubMenu thongKeDoanhThu = new GUI_SubMenu("Thống kê doanh thu", "");
+    private GUI_SubMenu thongKeSanPhan = new GUI_SubMenu("Thống kê sản phẩm", "");
+    private GUI_SubMenu thongKeNguoiDung = new GUI_SubMenu("Thống kê người dùng", "");
+    private GUI_SubMenu quanLyLich = new GUI_SubMenu("Quản lý lịch", "");
+    private GUI_SubMenu timKiemLich = new GUI_SubMenu("Tìm kiếm lịch", "");
+    private GUI_SubMenu timKiemDonHang = new GUI_SubMenu("Tìm kiếm đơn hàng", "");
+    private GUI_SubMenu quanLyDonHang = new GUI_SubMenu("Quản lý đơn hàng", "");
 }
