@@ -34,7 +34,7 @@ public class GUI_QuanAoComponent extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         setPreferredSize(new java.awt.Dimension(150, 200));
 
-        hinhAnh.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\ao\\.png.png")); // NOI18N
+        hinhAnh.setIcon(new javax.swing.ImageIcon("resources\\ao\\.png.png"));
 
         lblSanPham.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSanPham.setText("Áo Sample");

@@ -60,8 +60,8 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="hinhAnh">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hieud\Documents\NetBeansProjects\ShopQuanAo\resources\ao\.png.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resources\\ao\\.png.png&quot;)" type="code"/>
         </Property>
       </Properties>
     </Component>

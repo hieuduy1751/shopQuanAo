@@ -10,6 +10,6 @@ import org.hibernate.SessionFactory;
 public class main {
     public static void main(String[] args) {
         new GUI_Application();
-        SessionFactory sessionFactory = new MySessionFactory().getSessionFactory();
+//        SessionFactory sessionFactory = new MySessionFactory().getSessionFactory();
     }   
 }

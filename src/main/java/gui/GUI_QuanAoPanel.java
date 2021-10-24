@@ -67,7 +67,7 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
         txtTimKiem.setOpaque(false);
         add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 260, 50));
 
-        searchBox.setIcon(new javax.swing.ImageIcon("resources\\search.png")); // NOI18N
+        searchBox.setIcon(new javax.swing.ImageIcon("resources\\search.png"));
         add(searchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         scrollGrid.setBackground(new java.awt.Color(255, 255, 255));
@@ -188,12 +188,12 @@ public class GUI_QuanAoPanel extends javax.swing.JPanel {
         add(scrollList, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 960, 570));
 
         btnDsQA.setBackground(new java.awt.Color(255, 255, 255));
-        btnDsQA.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\grid.png")); // NOI18N
+        btnDsQA.setIcon(new javax.swing.ImageIcon("resources\\grid.png"));
         btnDsQA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         add(btnDsQA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 50, 45));
 
         btnLuoi.setBackground(new java.awt.Color(255, 255, 255));
-        btnLuoi.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\list.png")); // NOI18N
+        btnLuoi.setIcon(new javax.swing.ImageIcon("resources\\list.png"));
         btnLuoi.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnLuoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

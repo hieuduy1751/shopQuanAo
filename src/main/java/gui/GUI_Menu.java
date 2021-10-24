@@ -226,7 +226,7 @@ public class GUI_Menu extends javax.swing.JPanel {
 
         add(scrollMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 370));
 
-        rightTab.setIcon(new javax.swing.ImageIcon("C:\\Users\\hieud\\Documents\\NetBeansProjects\\ShopQuanAo\\resources\\BG.png")); // NOI18N
+        rightTab.setIcon(new javax.swing.ImageIcon("resources\\BG.png"));
         rightTab.setFocusable(false);
         rightTab.setPreferredSize(new java.awt.Dimension(250, 720));
         add(rightTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
